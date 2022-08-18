@@ -1,0 +1,260 @@
+/* zerando a margin e o padding, alinhando verticalmente os elementos e um tamanho total de 100% de altura do dispositivo do usuario */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #EEEEEE 0%, #FFFFFF 100%);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* centralizando o texto e tirando as bordas de todos os botoes */
+button {
+    text-align: center;
+    text-decoration: none;
+    border: none;
+}
+
+/* variaves de cor */
+:root {
+    --numberFillColor: black;
+    --numberStatus: #FF6600;
+}
+
+/* centralizando horizontalmente e verticalmente, tamanho de 100% da tela */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 100%;
+}
+
+/* Titulo com as letras maiusculase e cor em gradiente, posicao relativa para criar o underline */
+.title {
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+
+    background: -webkit-linear-gradient(#EF6C00, #DB6300);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Criando o underline */
+.title:after {
+    content: "";
+    background: #CFCFCF;
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    width: 85%;
+    left: 8%;
+    margin-left: -5px;
+}
+
+/* alinhamento centralizado verticalmente e horizontalmente */
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+}
+
+/* deixando o LED em linha e sem quebrar o numero */
+.numbers {
+    max-width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+/* 95% do tamanho do LED refrente ao pai */
+.numbers svg {
+    width: 95%;
+}
+
+/* o status do numero com a cor variavel */
+.number-status {
+    text-align: center;
+    font-weight: 700;
+    color: var(--numberStatus);
+    font-size: 1.5rem;
+}
+
+/* margin entre os numeros */
+svg {
+    display: inline-block;
+    margin: 20px;
+}
+
+/* transação ao preencher o numero */
+svg .segment {
+    fill: rgba(0, 0, 0, .15);
+    transition: .3s ease-in-out;
+}
+
+/* classes para preenchimento do painel referente ao numero selecionado */
+svg.num-1 .b,
+svg.num-1 .c,
+
+svg.num-2 .a,
+svg.num-2 .b,
+svg.num-2 .d,
+svg.num-2 .e,
+svg.num-2 .g,
+
+svg.num-3 .a,
+svg.num-3 .b,
+svg.num-3 .c,
+svg.num-3 .d,
+svg.num-3 .g,
+
+svg.num-4 .b,
+svg.num-4 .c,
+svg.num-4 .f,
+svg.num-4 .g,
+
+svg.num-5 .a,
+svg.num-5 .c,
+svg.num-5 .d,
+svg.num-5 .f,
+svg.num-5 .g,
+
+svg.num-6 .a,
+svg.num-6 .c,
+svg.num-6 .d,
+svg.num-6 .e,
+svg.num-6 .f,
+svg.num-6 .g,
+
+svg.num-7 .a,
+svg.num-7 .b,
+svg.num-7 .c,
+
+svg.num-8 .a,
+svg.num-8 .b,
+svg.num-8 .c,
+svg.num-8 .d,
+svg.num-8 .e,
+svg.num-8 .f,
+svg.num-8 .g,
+
+svg.num-9 .a,
+svg.num-9 .b,
+svg.num-9 .c,
+svg.num-9 .d,
+svg.num-9 .f,
+svg.num-9 .g,
+
+svg.num-0 .a,
+svg.num-0 .b,
+svg.num-0 .c,
+svg.num-0 .d,
+svg.num-0 .e,
+svg.num-0 .f {
+    fill: var(--numberFillColor)
+}
+
+/* centralizando o botao de Nova partida */
+.refresh-button_container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilizando o botao de Nova partida */
+.refresh-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 42px;
+    max-width: 240px;
+    border-radius: 15px;
+    color: #fff;
+    font-weight: 700;
+    padding: 30px 20px;
+    background: linear-gradient(to bottom, #434854 0%, #9E9E9E 100%);
+    text-transform: uppercase;
+}
+
+/* tamanho e cor do icone do botão */
+.refresh-button svg {
+    width: 25px;
+    height: auto;
+    fill: #fff;
+    margin: 0 15px 0 0;
+}
+
+/* alinhando o input e o botao de palpite verticalmente */
+.control-panel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* estilizando o input de palpite */
+.input {
+    border-radius: 10px;
+    border: 1px solid #CFCFCF;
+    height: 42px;
+    padding: 0 15px;
+    margin-right: 20px;
+}
+
+/* mudando a borda do input quando focado */
+.input:focus,
+.input:focus-visible {
+    border: 1px solid #FF6600;
+    outline: none;
+}
+
+/* estlizando o botão principal */
+.button {
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    height: 44px;
+    border-radius: 10px;
+    color: #fff;
+    background: linear-gradient(to bottom, #EF6C00 0%, #C0661C 100%);
+}
+
+/* Cor de fundo quando botão desabilitado */
+.button:disabled,
+.button[disabled] {
+    background: #DDDDDD;
+}
+
+/* Responsividade */
+@media only screen and (max-width: 315px) {
+    /* titulo menor em dispositivos menores */
+    .title h1 {
+        font-size: 1.5rem;
+    }
+    /* mudando a direção do input de palpite e botão */
+    .control-panel {
+        flex-direction: column;
+    }
+
+    .button {
+        margin-top: 15px;
+    }
+
+    .input{
+        margin-right: 0;
+    }
+}

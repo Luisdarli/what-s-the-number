@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Studio Sol</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="container">
+        <div class="title">
+            <h1>Qual é o número?</h1>
+        </div>
+
+        <section>
+            <!-- Montando o numero svg -->
+            <svg width="0" height="0" viewBox="0 0 0 0">
+                <defs>
+                    <g id="unit-h">
+                        <path d="M0 20 L20 40 L180 40 L200 20 L180 0 L20 0 Z"></path>
+                    </g>
+                    <g id="unit-v">
+                        <path d="M20 0 L0 20 L0 180 L20 200 L40 180 L40 20 Z"></path>
+                    </g>
+                </defs>
+            </svg>
+            <div>
+                <!-- Atualizando o status dinamicamente -->
+                <h1 id="number-status" class="number-status"></h1>
+            </div>
+            <div class="numbers" id="numbers-content">
+                <!-- Montando o número 0 através da classe -->
+                <svg id="number-1" class="num-0" width="130" height="240" viewBox="0 0 260 480">
+                    <use xlink:href="#unit-h" class="segment a" x="30" y="0"></use>
+                    <use xlink:href="#unit-v" class="segment b" x="220" y="30"></use>
+                    <use xlink:href="#unit-v" class="segment c" x="220" y="250"></use>
+                    <use xlink:href="#unit-h" class="segment d" x="30" y="440"></use>
+                    <use xlink:href="#unit-v" class="segment e" x="0" y="250"></use>
+                    <use xlink:href="#unit-v" class="segment f" x="0" y="30"></use>
+                    <use xlink:href="#unit-h" class="segment g" x="30" y="220"></use>
+                </svg>
+            </div>
+
+            <!-- Botão de Nova Partida dinamico -->
+            <div class="refresh-button_container" id="refresh-button_container">
+            </div>
+        </section>
+
+        <div class="control-panel">
+            <!-- Input do palpite -->
+            <input class="input" id="selected-number" placeholder="Digite o palpite" type="number" />
+            <button class="button" id="main-button">Enviar</button>
+        </div>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
